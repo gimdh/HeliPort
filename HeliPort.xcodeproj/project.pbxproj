@@ -21,6 +21,8 @@
 		BCFA32EB2424D2BE00E23603 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFA32EA2424D2BE00E23603 /* AppDelegate.swift */; };
 		BCFA32ED2424D2BF00E23603 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCFA32EC2424D2BF00E23603 /* Assets.xcassets */; };
 		BCFA32F02424D2BF00E23603 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCFA32EE2424D2BF00E23603 /* MainMenu.xib */; };
+		C63FA3B724924BA900D6F9A6 /* KernelConnector.c in Sources */ = {isa = PBXBuildFile; fileRef = C63FA3B524924BA900D6F9A6 /* KernelConnector.c */; };
+		C63FA3B924924EC500D6F9A6 /* KernelCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63FA3B824924EC500D6F9A6 /* KernelCommand.swift */; };
 		F84E327924457FAE00D07895 /* ItlNetworkUserClient.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F84E327724457FAE00D07895 /* ItlNetworkUserClient.hpp */; };
 		F86A8960243CD13300CBABC2 /* TestService.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F86A895F243CD13300CBABC2 /* TestService.hpp */; };
 		F86A8962243CD13400CBABC2 /* TestService.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F86A8961243CD13400CBABC2 /* TestService.cpp */; };
@@ -75,6 +77,11 @@
 		BCFA32EF2424D2BF00E23603 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		BCFA32F12424D2BF00E23603 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCFA32F22424D2BF00E23603 /* HeliPort.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HeliPort.entitlements; sourceTree = "<group>"; };
+		C63FA3B424924BA900D6F9A6 /* Commands.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Commands.h; sourceTree = "<group>"; };
+		C63FA3B524924BA900D6F9A6 /* KernelConnector.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = KernelConnector.c; sourceTree = "<group>"; };
+		C63FA3B624924BA900D6F9A6 /* KernelConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KernelConnector.h; sourceTree = "<group>"; };
+		C63FA3B824924EC500D6F9A6 /* KernelCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KernelCommand.swift; sourceTree = "<group>"; };
+		C63FA3BA24924F1500D6F9A6 /* HeliPort-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HeliPort-Bridging-Header.h"; sourceTree = "<group>"; };
 		F84E327624457FAE00D07895 /* ItlNetworkUserClient.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ItlNetworkUserClient.cpp; sourceTree = "<group>"; };
 		F84E327724457FAE00D07895 /* ItlNetworkUserClient.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ItlNetworkUserClient.hpp; sourceTree = "<group>"; };
 		F86A895D243CD13000CBABC2 /* TestService.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestService.kext; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,6 +141,8 @@
 		BCFA32DE2424D2BE00E23603 = {
 			isa = PBXGroup;
 			children = (
+				C63FA3BA24924F1500D6F9A6 /* HeliPort-Bridging-Header.h */,
+				C63FA3B324924AA000D6F9A6 /* KextControl */,
 				7562BBE324826102008A9BD2 /* README.md */,
 				F86A897A243CD5F500CBABC2 /* Common */,
 				BCFA32E92424D2BE00E23603 /* HeliPort */,
@@ -166,6 +175,17 @@
 				BCFA32F22424D2BF00E23603 /* HeliPort.entitlements */,
 			);
 			path = HeliPort;
+			sourceTree = "<group>";
+		};
+		C63FA3B324924AA000D6F9A6 /* KextControl */ = {
+			isa = PBXGroup;
+			children = (
+				C63FA3B424924BA900D6F9A6 /* Commands.h */,
+				C63FA3B524924BA900D6F9A6 /* KernelConnector.c */,
+				C63FA3B624924BA900D6F9A6 /* KernelConnector.h */,
+				C63FA3B824924EC500D6F9A6 /* KernelCommand.swift */,
+			);
+			path = KextControl;
 			sourceTree = "<group>";
 		};
 		F86A895E243CD13100CBABC2 /* TestService */ = {
@@ -374,6 +394,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75FDF38C2481D25A00B2A601 /* Api.c in Sources */,
+				C63FA3B724924BA900D6F9A6 /* KernelConnector.c in Sources */,
 				BCA4DFAB2438CF25002A862A /* WiFiPopoverView.swift in Sources */,
 				BCF712F9243C8BE800BE3C05 /* StatusBarIconManager.swift in Sources */,
 				BCFA32EB2424D2BE00E23603 /* AppDelegate.swift in Sources */,
@@ -382,6 +403,7 @@
 				BCA4DFA724385F73002A862A /* KeychainManager.swift in Sources */,
 				BCA4DFAD243A307B002A862A /* StatusMenu.swift in Sources */,
 				75FDF38B2481D22000B2A601 /* NetworkInfo.swift in Sources */,
+				C63FA3B924924EC500D6F9A6 /* KernelCommand.swift in Sources */,
 				BCAF807F243DBA8C0034C8C7 /* JoinPopWindow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -569,7 +591,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.lhy.HeliPort;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = ClientKit/Api.h;
+				SWIFT_OBJC_BRIDGING_HEADER = "HeliPort-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -592,7 +614,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.lhy.HeliPort;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = ClientKit/Api.h;
+				SWIFT_OBJC_BRIDGING_HEADER = "HeliPort-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

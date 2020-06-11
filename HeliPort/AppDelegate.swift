@@ -25,6 +25,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
+        
+        
 
         statusBar = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
         statusBar.button?.image = NSImage.init(named: "AirPortInMenu0")

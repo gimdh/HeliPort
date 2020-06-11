@@ -186,7 +186,7 @@ class JoinPopWindow: NSWindow, NSTextFieldDelegate {
         joinButton?.title = NSLocalizedString("Join", comment: "")
         joinButton?.target = self
         joinButton?.isEnabled = false
-        //joinButton?.action = #selector()
+        joinButton?.action = #selector(join_ssid(_: ))
         buttonView?.addSubview(joinButton!)
 
         cancelButton?.bezelStyle = .rounded
